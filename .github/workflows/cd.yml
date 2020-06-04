@@ -18,6 +18,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: rafsodc/helpers
+          repository: docker.pkg.github.com/rafsodc/helpers
           dockerfile: docker/docker_test_container
           tag_with_ref: true
