@@ -23,7 +23,6 @@ jobs:
           dockerfile: docker/docker_test_container
           tag_with_ref: true
       - name: Build
-          # Frustratingly require as you cannot pull from GitHub without username and password, which is not supported by jobs.containers
           uses: docker/build-push-action@v1
           with:
             username: ${{ secrets.USERNAME }}
