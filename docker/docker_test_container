@@ -12,9 +12,9 @@ ENV DOCKER_TLS_VERIFY: '1'
 
 RUN apk --update add tar
 RUN apk add curl jq
-RUN mkdir -p ~/.docker/cli-plugins
-RUN curl -fsSL -o ~/.docker/cli-plugins/docker-buildx "https://github.com/docker/buildx/releases/download/v${DOCKER_BUILDX_VERSION}/buildx-v${DOCKER_BUILDX_VERSION}.linux-amd64"
-RUN chmod +x ~/.docker/cli-plugins/docker-buildx
+RUN mkdir -p /usr/local/lib/docker/cli-plugins
+RUN curl -fsSL -o /usr/local/lib/docker/cli-plugins/docker-buildx "https://github.com/docker/buildx/releases/download/v${DOCKER_BUILDX_VERSION}/buildx-v${DOCKER_BUILDX_VERSION}.linux-amd64"
+RUN chmod +x /usr/local/lib/docker/cli-plugins/docker-buildx
 
 COPY --from=compose /usr/local/bin/docker-compose /usr/local/bin/docker-compose
 
